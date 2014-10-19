@@ -1,0 +1,59 @@
+<h1>{{title}}</h1>
+<form role="form">
+  <div class="form-group" ng-show="!isNew">
+    <label>请输入密码*</label>
+    <input type="password" class="form-control" ng-model="contact.password">
+  </div>
+  <div class="form-group">
+    <label>电话*</label>
+    <input type="text" class="form-control" ng-model="contact.phone">
+  </div>
+  <div class="form-group" ng-show="isNew">
+    <label>密码*</label>
+    <input type="password" class="form-control" ng-model="contact.password">
+  </div>
+  <div class="form-group" ng-show="isNew" ng-class='{"has-error":pswMatch}'>
+    <label>重复密码*</label>
+    <input type="password" class="form-control" ng-model="passwordConfirm">
+  </div>
+  <div class="form-group">
+    <label>姓名*</label>
+    <input type="text" class="form-control" ng-model="contact.name">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" ng-model="contact.email">
+  </div>
+  <div class="form-group">
+    <label>水木id</label>
+    <input type="text" class="form-control" ng-model="contact.smid">
+  </div>
+  <div class="form-group">
+    <label>行业</label>
+    <input type="text" class="form-control" ng-model="contact.industry">
+  </div>
+  <div class="form-group">
+    <label>公司</label>
+    <input type="text" class="form-control" ng-model="contact.company">
+  </div>
+  <div class="form-group">
+    <label>职位</label>
+    <input type="text" class="form-control" ng-model="contact.position">
+  </div>
+  <div class="form-group">
+    <label>入会时间</label>
+    <input type="text" class="form-control" ng-model="contact.shanye_time">
+  </div>
+  <div class="form-group">
+    <label>入学年份</label>
+    <input type="text" class="form-control" ng-model="contact.school_time">
+  </div>
+  <div class="form-group">
+    <label>祝语</label>
+    <textarea class="form-control" ng-model="contact.wishes" rows="5"></textarea>
+  </div>
+  <div class="alert alert-danger" role="alert" ng-show="errormsg">{{errormsg}}</div>
+  <button type="submit" class="btn btn-default" ng-click="submit();"
+      ng-disabled="!isEnable()">提交</button>
+  <button type="button" class="btn btn-default" ng-click="back();">返回</button>
+</form>

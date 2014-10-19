@@ -1,0 +1,24 @@
+<h1>会员通讯录</h1>
+<div class="form-group">
+    <label for="query">输入关键字进行搜索</label>
+    <input class="form-control" type="text" id="query" ng-model="query">
+</div>
+<div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="navTo('/contact/new')">填写我的个人信息</button>
+</div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>电话</th>
+            <th>水木id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in contacts | filter:query">
+            <td><a href="#/contact/{{contact.id}}">{{contact.name}}</a></td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.smid}}</td>
+        </tr>
+    </tbody>
+</table>

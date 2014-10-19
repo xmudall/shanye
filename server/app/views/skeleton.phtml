@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <base href="{{ baseUrl }}"></base>
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/base.js"></script>
+        {% block head %}{% endblock %}
+        <title>CMS | {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="content-area">
+            <div class="root-header row">
+                <div class="navbar col">
+                    {% for item in menu %}
+                    <div class="col nav-item"><a href="{{item.href}}">{{item.name}}</a></div>
+                    {% endfor %}
+                </div>
+                <div class="profile col">
+                    {% if user is empty %}
+                    <a href="index/login">Log in</a>
+                    {% else %}
+                    <span>{{user.username}}, welcom!</span>
+                    <a href="index/logout">Log out</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="root-content row">
+            <div class="alert alert-success alert-dismissible" role="alert" style="height: 50px; display: none;">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <span class="content"></span>
+            </div>
+            <div class="alert alert-danger alert-dismissible" role="alert" style="height: 50px; display: none;">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <span class="content"></span>
+            </div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+    {% block script %}{% endblock %}
+</html>

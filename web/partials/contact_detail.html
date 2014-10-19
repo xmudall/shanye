@@ -1,0 +1,18 @@
+<h1>会员详细信息</h1>
+<table class="table table-striped">
+    <tbody>
+        <tr><td>姓名</td><td>{{contact.name}}</td></tr>
+        <tr><td>电话</td><td>{{contact.phone}}</td></tr>
+        <tr><td>Email</td><td>{{contact.email}}</td></tr>
+        <tr><td>水木id</td><td>{{contact.smid}}</td></tr>
+        <tr><td>行业</td><td>{{contact.industry}}</td></tr>
+        <tr><td>公司</td><td>{{contact.company}}</td></tr>
+        <tr><td>职位</td><td>{{contact.position}}</td></tr>
+        <tr><td>入会时间</td><td>{{contact.shanye_time}}</td></tr>
+        <tr><td>入学年份</td><td>{{contact.school_time}}</td></tr>
+        <tr><td>祝语</td><td>{{contact.wishes}}</td></tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-default" ng-click="navTo('/contact/edit/' + contact.id);">修改</button>
+<button type="button" class="btn btn-default" ng-click="navTo('/contacts');">返回</button>
+

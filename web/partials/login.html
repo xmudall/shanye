@@ -1,0 +1,11 @@
+<div simple-nav-bar></div>
+<div class="form-wrap">
+    <input type="text" ng-model="username" placeholder="username">
+    <input type="PASSWORD" ng-model="password" placeholder="password">
+    <span ng-show="errormsg">{{errormsg}}</span>
+    <button ng-disabled="!username || !password" ng-click="login()">Login</button>
+</div>
+<div class="link-wrap box-wrapper-center">
+    <a href="#/findPsw/{{username}}">Forget Password?</a>
+    <a href="#/register">Register</a>
+</div>
